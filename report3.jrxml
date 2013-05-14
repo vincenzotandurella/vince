@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report3" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8edcd4fa-c518-431e-9830-f38313b2734b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="param2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[test]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     REPORT.`ID_REPORT` AS REPORT_ID_REPORT,
+     REPORT.`NAME` AS REPORT_NAME,
+     REPORT.`JSON` AS REPORT_JSON,
+     REPORT.`DESCRIPTION` AS REPORT_DESCRIPTION,
+     REPORT.`JASPERFILE` AS REPORT_JASPERFILE
+FROM
+     `REPORT` REPORT WHERE NAME =$P{param2}]]>
+	</queryString>
+	<field name="REPORT_ID_REPORT" class="java.lang.String"/>
+	<field name="REPORT_NAME" class="java.lang.String"/>
+	<field name="REPORT_JSON" class="java.lang.String"/>
+	<field name="REPORT_DESCRIPTION" class="java.lang.String"/>
+	<field name="REPORT_JASPERFILE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="5bf554c2-7d33-42e3-ba28-996a08be8577" x="0" y="0" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[REPORT_ID_REPORT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aea73683-dd7a-4b64-ae3d-7ce551a829be" x="150" y="0" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[REPORT_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="acdbc86b-90e3-4532-b150-d16476fd2a95" x="450" y="0" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[REPORT_DESCRIPTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5a262ceb-f850-4485-84b3-faab7e6ea9ce" x="600" y="0" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[REPORT_JASPERFILE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="83" splitType="Stretch">
+			<textField>
+				<reportElement uuid="eab7fa50-738e-4bb6-862b-e5e9131118a3" x="0" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{REPORT_ID_REPORT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1c868e81-40f3-418b-9168-03782c3e5487" x="150" y="0" width="300" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{REPORT_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="af8384b9-0ac4-4a07-8961-fa1c949b5761" x="150" y="34" width="600" height="39"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{REPORT_JSON}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="05f64af6-7081-4855-9831-5fb703c641d8" x="450" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{REPORT_DESCRIPTION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1e0b089e-f99a-49dc-bcac-3c05c07d432e" x="600" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{REPORT_JASPERFILE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="97fc19c0-93b8-4274-9468-38248f2825b0" x="0" y="34" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[REPORT_JSON]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
